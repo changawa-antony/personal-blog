@@ -6,6 +6,7 @@ class Config:
     '''
     SECRET_KEY = os.environ.get('SECRET_KEY')
     
+    
 class ProdConfig(Config):
     '''
     Production  configuration child class

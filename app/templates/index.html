@@ -12,7 +12,18 @@
             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
         </div>
     </div>
-
+</div>
+<hr>
+<div class="container d-flex justify-content-center">
+    <div class="card" style="width: 50rem;">
+        <div class="card-body">
+          <h5 class="card-title">Quote of the Day</h5>
+          <hr>
+          <h6 class="card-subtitle mb-2 text-muted">Author: {{quote.author}}</h6>
+          <p class="card-text">Quote: {{quote.quote}}</p>
+          <a href="{{quote.permalink}}" class="card-link">follow quote</a>
+        </div>
+      </div>
 </div>
     
 {% endblock %}
