@@ -10,7 +10,7 @@ def index ():
   quote = get_quotes()
   return render_template('index.html',quote=quote)
 
-@main.route('/create-post')
+@main.route('/create-post', methods = ['GET', 'POST'])
 def addpost():
     title = 'post'
     form = CreatePost()
