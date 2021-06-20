@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container form-input">
+    <h2>Add your Post</h2>
+    <form action="" method="post">
+        {{form.hidden_tag()}}
+            
+            <div class="form-group input-collection">
+                {{form.topic.label(class="form-control-lable")}}
+                {{form.topic(class="form-control")}}
+            </div>
+
+            <div class="form-group input-collection">
+                {{form.content.label(class="form-control-label")}}
+                {{form.content(class="form-control")}}
+            </div>
+    </div>
+</div>
+
+        <div class="cart-button text-center">
+            {{form.submit(class="btn btn-warning text-light post-btn")}}
+        </div>
+    </form>
+</div>
+{% endblock %}
