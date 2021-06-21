@@ -1,0 +1,17 @@
+<!-- Displaying reviews macro -->
+{% macro displayPosts(show_posts) %}
+    {% for post in show_posts %}
+    <div class="container d-flex justify-content-center mt-5">
+        <div class="card" style="width: 50rem;">
+            <div class="card-body">
+                <div class="user-div">
+                    <p class="font-style-italic">Username@post</p>
+                </div>
+                <h5 class="card-title">{{show_posts.title}}</h5>
+                <hr>
+                <p class="card-text">{{show_posts.content}}</p>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+{% endmacro %}

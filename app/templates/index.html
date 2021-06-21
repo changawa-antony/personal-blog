@@ -1,18 +1,24 @@
 {% extends 'base.html'%}
 {% block content %}
 
+{% for post in show_posts%}
+
 <div class="container d-flex justify-content-center mt-5">
     <div class="card" style="width: 50rem;">
         <div class="card-body">
             <div class="user-div">
                 <p class="font-style-italic">Username@post</p>
             </div>
-            <h5 class="card-title">My blog</h5>
+            <h5 class="card-title">{{post.title}}</h5>
             <hr>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <p class="card-text">{{post.content}}</p>
         </div>
     </div>
 </div>
+
+{% endfor %}
+
+
 <hr>
 <div class="container d-flex justify-content-center">
     <div class="card" style="width: 50rem;">
