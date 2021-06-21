@@ -1,5 +1,9 @@
 from flask import Blueprint
 
-auth = Blueprint('auth',__name__)
 
-from ..auth import views,forms
+# Blueprint Configuration
+auth_bp = Blueprint(
+    'auth_bp', __name__,
+    template_folder='templates',
+    static_folder='static'
+)

@@ -8,9 +8,9 @@
       <ul class="nav navbar-nav navbar-right">
         {% if current_user.is_authenticated %}
         <li style="color:white;padding:15px;">{{current_user.username}}</li>
-        <li><a href="{{url_for('auth.logout')}}">Sign out</a></li>
+        <li><a href="{{url_for('auth_bp.logout')}}">Sign out</a></li>
         {% else %}
-        <li><a href="{{url_for('auth.login')}}">Sign in</a></li>
+        <li><a href="{{url_for('auth_bp.login')}}">Sign in</a></li>
         {%endif%}
       </ul>
       
@@ -22,7 +22,7 @@
           <a class="nav-link" href="{{url_for('main.addpost')}}">Add post</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{url_for('auth.register')}}">Sign-in</a>
+          <a class="nav-link" href="{{url_for('auth_bp.signup')}}">Sign-in</a>
         </li>
       </ul>
     </div>
