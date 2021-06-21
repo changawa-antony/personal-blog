@@ -1,3 +1,4 @@
+from app.auth.forms import LoginForm
 from flask.helpers import url_for
 from werkzeug.utils import redirect
 from app.models import Post
@@ -24,7 +25,8 @@ def index ():
 @main.route('/create-post', methods = ['GET', 'POST'])
 @login_required
 def addpost():
-    login_form = views
+      
+    login_form = views.login
     title = 'post'
     form = CreatePost()
 
