@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <div class="form-wrapper">
+  <div class="container form-wrapper">
 
     {% for message in get_flashed_messages() %}
       <div class="alert alert-warning">
@@ -15,14 +15,14 @@
       </div>
     {% endfor %}
 
-    <h1>Sign Up</h1>
+    <h3>Sign Up</h3>
 
     <form method="POST" action="/signup">
       {{ form.csrf_token }}
 
       <fieldset class="name">
-        {{ form.name.label }}
-        {{ form.name(placeholder='John Smith') }}
+        {{ form.name.label(class="form-control-label")}}
+        {{ form.name(class="form-control")}}
         {% if form.name.errors %}
           <ul class="errors">
             {% for error in form.email.errors %}
@@ -32,8 +32,8 @@
       </fieldset>
 
       <fieldset class="email">
-        {{ form.email.label }}
-        {{ form.email(placeholder='youremail@example.com') }}
+        {{ form.email.label(class="form-control-label")}}
+        {{ form.email(class="form-control")}}
         {% if form.email.errors %}
           <ul class="errors">
             {% for error in form.email.errors %}
@@ -43,8 +43,8 @@
       </fieldset>
 
       <fieldset class="password">
-        {{ form.password.label }}
-        {{ form.password }}
+        {{ form.password.label(class="form-control-label")}}
+        {{ form.password(class="form-control")}}
         {% if form.password.errors %}
           <ul class="errors">
             {% for error in form.password.errors %}
@@ -54,8 +54,8 @@
       </fieldset>
 
       <fieldset class="confirm">
-        {{ form.confirm.label }}
-        {{ form.confirm }}
+        {{ form.confirm.label (class="form-control-label")}}
+        {{ form.confirm(class="form-control")}}
         {% if form.confirm.errors %}
           <ul class="errors">
             {% for error in form.confirm.errors %}
@@ -64,13 +64,9 @@
         {% endif %}
       </fieldset>
 
-      <fieldset class="website">
-        {{ form.website.label }}
-        {{ form.website(placeholder='http://example.com') }}
-      </fieldset>
 
       <div class="submit-button">
-        {{ form.submit }}
+        {{ form.submit(class="btn btn-warning")}}
       </div>
 
     </form>

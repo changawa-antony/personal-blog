@@ -65,10 +65,7 @@ class SignupForm(FlaskForm):
             EqualTo('password', message='Passwords must match.')
         ]
     )
-    website = StringField(
-        'Website',
-        validators=[Optional()]
-    )
+    
     submit = SubmitField('Register')
 
 

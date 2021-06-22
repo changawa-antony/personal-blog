@@ -57,6 +57,13 @@ class Quote:
 
 
 class Post:
+    '''
+    Defining quotes object
+    '''
+    def __init__(self,topic,content):
+        self.topic = topic
+        self.content = content
+
     
     all_posts = []
 
@@ -92,7 +99,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 class User(UserMixin, db.Model):
     """User account model."""
 
-    __tablename__ = 'flasklogin-users'
+    __tablename__ = 'users'
     id = db.Column(
         db.Integer,
         primary_key=True

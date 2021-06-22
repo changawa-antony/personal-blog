@@ -23,7 +23,7 @@ def index ():
   return render_template('index.html',quote=quote, show_post = show_posts)
 
 @main.route('/create-post', methods = ['GET', 'POST'])
-@login_required
+# @login_required
 def addpost():
       
     login_form = views.login
@@ -31,7 +31,9 @@ def addpost():
     form = CreatePost()
 
     if request.method == 'POST':
-        post = Post(title = form.title.data, content = form.content.data)
+        topic = form.topic.data
+        content = form.content.data
+        post = Post(topic,content)
         post.save_post()
         return redirect(url_for('index.html'))
         

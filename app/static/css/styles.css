@@ -30,3 +30,15 @@ h2{
 .card{
     width: 50rem;
 }
+
+.form-control{
+    margin-bottom: 30px;
+}
+
+.login-signup{
+    margin-top: 10px;
+}
+
+.form-wrapper{
+    margin-top: 50px;
+}

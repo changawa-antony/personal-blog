@@ -2,7 +2,7 @@
 
 
 {% block content %}
-  <div class="form-wrapper">
+  <div class="container form-wrapper">
 
     {% for message in get_flashed_messages() %}
       <div class="alert alert-warning">
@@ -16,14 +16,14 @@
       </div>
     {% endfor %}
 
-    <h1>Log In</h1>
+    <h3>Log In</h3>
 
     <form method="POST" action="/login">
       {{ form.csrf_token }}
 
       <fieldset class="email">
-        {{ form.email.label }}
-        {{ form.email(placeholder='youremail@example.com') }}
+        {{ form.email.label(class="form-control-label") }}
+        {{ form.email(class="form-control") }}
         {% if form.email.errors %}
           <ul class="errors">
             {% for error in form.email.errors %}
@@ -33,8 +33,8 @@
       </fieldset>
 
       <fieldset class="password">
-        {{ form.password.label }}
-        {{ form.password }}
+        {{ form.password.label(class="form-control-label") }}
+        {{ form.password(class="form-control")}}
         {% if form.email.errors %}
           <ul class="errors">
             {% for error in form.password.errors %}
@@ -44,7 +44,7 @@
       </fieldset>
 
       <div class="submit-button">
-        {{ form.submit }}
+        {{ form.submit(class="btn btn-warning")}}
       </div>
 
       <div class="login-signup">
