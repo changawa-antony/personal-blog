@@ -60,8 +60,8 @@ class Post:
     '''
     Defining quotes object
     '''
-    def __init__(self,topic,content):
-        self.topic = topic
+    def __init__(self,title,content):
+        self.topic = title
         self.content = content
 
     

@@ -6,7 +6,7 @@ from . import main
 from flask import app, render_template,request
 from .forms import CreatePost
 from app.main import forms
-from ..logic import get_quotes
+from ..logic import get_quotes,show_post
 from flask_login import login_required
 from ..auth import views
 from ..models import Quote, db 
@@ -19,7 +19,7 @@ quote = Quote
 def index ():
       
   quote = get_quotes()
-  show_posts = Post.get_posts()
+  show_posts = Post.get_posts
   return render_template('index.html',quote=quote, show_post = show_posts)
 
 @main.route('/create-post', methods = ['GET', 'POST'])
@@ -35,6 +35,8 @@ def addpost():
         content = form.content.data
         post = Post(topic,content)
         post.save_post()
-        return redirect(url_for('index.html'))
+        db.session.add(post)
+        db.session.commit()
+        return redirect(url_for('main.index'))
         
     return render_template('post.html',form = form,title = title, login_form = login_form)
