@@ -3,7 +3,7 @@ from flask.helpers import url_for
 from werkzeug.utils import redirect
 from app.models import Post
 from . import main
-from flask import app, render_template,request
+from flask import app, render_template,request,flash
 from .forms import CreatePost
 from app.main import forms
 from ..logic import get_quotes,show_post
@@ -16,7 +16,7 @@ posts = Post
 quote = Quote
 
 @main.route('/')
-def index ():
+def index():
       
   quote = get_quotes()
   show_posts = Post.get_posts
@@ -37,6 +37,7 @@ def addpost():
         post.save_post()
         db.session.add(post)
         db.session.commit()
-        return redirect(url_for('main.index'))
+        flash('Post was successfully added')
+        return redirect(url_for('index'))
         
     return render_template('post.html',form = form,title = title, login_form = login_form)

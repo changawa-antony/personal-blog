@@ -1,23 +1,29 @@
 {% extends 'base.html'%}
 {% block content %}
 
-{% for post in show_posts%}
 
 <div class="container d-flex justify-content-center mt-5">
     <div class="card" style="width: 50rem;">
         <div class="card-body">
             <div class="user-div">
-                <p class="font-style-italic">Username@post</p>
+                <p class="font-style-italic">kazungu@post</p>
             </div>
-            <h5 class="card-title">{{post.title}}</h5>
+            <h5 class="card-title">Creating flask app</h5>
             <hr>
-            <p class="card-text">{{post.content}}</p>
+            <p class="card-text">
+                from flask import Flask <br>
+
+                app = Flask(__name__) <br>
+
+                @app.route('/') <br>
+                def hello():<br>
+                    return "Hello World!" <br>
+            </p>
         </div>
     </div>
 </div>
 
-{% endfor %}
-
+{% include 'comments.html'%}
 
 <hr>
 <div class="container d-flex justify-content-center">
