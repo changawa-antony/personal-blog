@@ -21,7 +21,7 @@
         <li style="color:white;padding:15px;">{{current_user.username}}</li>
         <li><a class="nav-link" href="{{url_for('auth_bp.logout')}}">Sign out</a></li>
         {% else %}
-        <li><a class="nav-link" href="{{url_for('auth_bp.login')}}">Sign in</a></li>
+        <li><a class="nav-link" href="{{url_for('auth_bp.signup')}}">Sign in</a></li>
         {%endif%}
       </ul>
     </div>

@@ -30,6 +30,6 @@ def create_app(config_name):
     from .auth import auth_bp as auth_bp_blueprint
     # app.register_blueprint(main_blueprint)
     app.register_blueprint(main_blueprint)
-    app.register_blueprint(auth_bp_blueprint,url_prefix = '/authenticate')
+    app.register_blueprint(auth_bp_blueprint)
 
     return app

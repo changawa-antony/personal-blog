@@ -3,9 +3,8 @@ from flask.helpers import url_for
 from werkzeug.utils import redirect
 from app.models import Post
 from . import main
-from flask import app, render_template,request,flash
+from flask import render_template,request,flash
 from .forms import CreatePost
-from app.main import forms
 from ..logic import get_quotes,show_post
 from flask_login import login_required
 from ..auth import views
@@ -23,7 +22,7 @@ def index():
   return render_template('index.html',quote=quote, show_post = show_posts)
 
 @main.route('/create-post', methods = ['GET', 'POST'])
-# @login_required
+@login_required
 def addpost():
       
     login_form = views.login
